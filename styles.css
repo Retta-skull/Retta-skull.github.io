@@ -1,7 +1,11 @@
 * {
     font-family: 'Press Start 2P', cursive;
   }
-  
+  header {
+    display: grid;
+    grid-auto-flow: column;
+    grid-template-columns: 1fr;
+  }  
   .grid {
     display: grid;
     grid-template-columns: 320px 200px;
