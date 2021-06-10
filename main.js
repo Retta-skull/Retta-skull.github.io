@@ -1,7 +1,6 @@
 const COLS = 10;
 const ROWS = 20;
 const BLOCK_SIZE = 30;
-
 const COLORS = [
   'none',
   'cyan',
@@ -53,28 +52,31 @@ class Piece {
     color;
     shape;
     ctx;
+    randomizeTetrominoType(noOfTypes) {
+      return Math.floor(Math.random() * noOfTypes + 1);
+    }
     
+    typeId = this.randomizeTetrominoType(COLORS.length);
+
     constructor(ctx) {
       this.ctx = ctx;
       this.spawn();
     }
-    
+
     spawn() {
-      this.color = 'blue';
-      this.shape = [
-        [2, 0, 0], 
-        [2, 2, 2], 
-        [0, 0, 0]
-      ];
+      this.shape = SHAPES[typeId];
+      this.color = COLORS[typeId];
       
       // Starting position.
       this.x = 3;
       this.y = 0;
     }
-}// 테트리스 조각 모음
+}// 테트리스 조각 뽑기
 
 let board = new Board();
 function play() {
-  board.reset();
-  console.table(board.grid);
+  board = getEmptyBoard();
+  let piece = new Piece(ctx);
+  piece.draw();
+  board.piece = piece;
 }
