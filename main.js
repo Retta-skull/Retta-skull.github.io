@@ -55,7 +55,7 @@ class Piece {
     randomizeTetrominoType(noOfTypes) {
       return Math.floor(Math.random() * noOfTypes + 1);
     }
-    
+
     typeId = this.randomizeTetrominoType(COLORS.length);
 
     constructor(ctx) {
@@ -75,7 +75,7 @@ class Piece {
 
 let board = new Board();
 function play() {
-  board = getEmptyBoard();
+  board = new getEmptyBoard();
   let piece = new Piece(ctx);
   piece.draw();
   board.piece = piece;
