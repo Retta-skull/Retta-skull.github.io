@@ -2,8 +2,7 @@
     font-family: 'Press Start 2P', cursive;
   }
   .grid {
-    display: grid;
-    grid-template-columns: 1000px 1000px;
+    display: flex;
   }
   
   .right-column {
