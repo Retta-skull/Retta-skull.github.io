@@ -1,19 +1,14 @@
 * {
     font-family: 'Press Start 2P', cursive;
   }
-  header {
-    display: grid;
-    grid-auto-flow: column;
-    grid-template-columns: 1fr;
-  }  
   .grid {
     display: grid;
     grid-template-columns: 320px 200px;
   }
   
   .right-column {
-    display: grid;
-    flex-direction: column;
+    display: flex;
+    flex-direction: row;
     justify-content: space-between;
   }
   
