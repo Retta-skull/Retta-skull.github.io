@@ -1,8 +1,4 @@
-* {
-    font-family: 'Press Start 2P', cursive;
-  }
-  
-  .grid {
+    .grid {
     display: grid;
     grid-template-columns: 320px 200px;
   }
