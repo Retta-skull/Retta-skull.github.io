@@ -233,12 +233,12 @@ function checkGameOver(){
 
 // 게임오버 처리
 function gameover(){
-    alert("[Game Over]\nMax: "+getMaxNum()+"\nScore"+score);
     let highScore = Number(highScoreElem.textContent);
     if(score > highScore) {
         localStorage.setItem('high-score',(score));
         highScoreElem.textContent =(score);
-        alert("[Game Over]\nMax: "+getMaxNum()+"\nScore"+score);
+        alert("최고기록!: "+getMaxNum()+"\nScore"+score);
+        var input = prompt('닉네임!');
     } else {
         ctxMainBoard.fillText('게임 오버', 2.8, 4.2);
     }
