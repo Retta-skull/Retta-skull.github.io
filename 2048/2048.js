@@ -238,7 +238,7 @@ function gameover(){
     if(score > highScore) {
         localStorage.setItem('high-score',(score));
         highScoreElem.textContent =(score);
-        ctxMainBoard.fillText('기록 갱신', 2.8, 4.2);
+        alert("[Game Over]\nMax: "+getMaxNum()+"\nScore"+score);
     } else {
         ctxMainBoard.fillText('게임 오버', 2.8, 4.2);
     }
