@@ -1,6 +1,7 @@
 var board = Array(Array(0,0,0,0),Array(0,0,0,0),Array(0,0,0,0),Array(0,0,0,0));
 var tableID = Array(Array("00","01","02","03"),Array("10","11","12","13"),Array("20","21","22","23"),Array("30","31","32","33"));
 var score;
+let highScoreElem = document.querySelector('#high-score');
 
 // 키보드 입력 처리
 document.onkeydown = keyDownEventHandler;
@@ -27,6 +28,7 @@ function init(){
         if(board[y][x]==0) board[y][x]=getNewNum();
         else i--;
     }
+    highScoreElem.textContent = localStorage.getItem('high-score')||0;
     update();
 }
 
@@ -232,5 +234,14 @@ function checkGameOver(){
 // 게임오버 처리
 function gameover(){
     alert("[Game Over]\nMax: "+getMaxNum()+"\nScore"+score);
+    let highScore = Number(highScoreElem.textContent);
+    if(score > highScore) {
+        localStorage.setItem('high-score',(score));
+        highScoreElem.textContent =(score);
+        ctxMainBoard.fillText('기록 갱신', 2.8, 4.2);
+    } else {
+        ctxMainBoard.fillText('게임 오버', 2.8, 4.2);
+    }
+    gameStatus = 'Q';
     init();
 }
