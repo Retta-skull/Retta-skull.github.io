@@ -7,10 +7,6 @@
     </head>
     <link rel="stylesheet" type="text/css" href="2048.css">
     <body>
-        <p>
-            <span class="high-score-title">최고점수</span><br>
-            <span id="high-score">0</span>
-        </p>
         <table id="titleBar" border=0>
             <tr>
                 <td id="titlePad">
@@ -21,7 +17,7 @@
                     <p id="score"></p>
             </tr>
         </table>
-        <table id="board" border=0>
+        <table id="board" class="board" border=0>
             <tr>
                 <td id="00"></td>
                 <td id="01"></td>
@@ -46,6 +42,10 @@
                 <td id="32"></td>
                 <td id="33"></td>
             </tr>
+        </table>
+        <table id = "scoreboard">
+            <span class="high-score-title">최고점수</span><br>
+            <span id="high-score">0</span>
         </table>
         <p id="info">2048 Copyright (c) YJYOON All rights reserved.</p>
     </body>
